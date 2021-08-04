@@ -19,7 +19,7 @@
     <title>Patient Registration Form</title>
     <!-- TAB TITLE -->
     <style>
-        label:not(label[for=telephone], label[for=email], label[for=mHistory], label[for=symptoms], label[for=patientId], label[name=genderOpt], label[name=medicalHistory]):after {
+        label:not(label[for=telephone], label[for=email], label[for=mHistory], label[for=symptoms], label[name=symptomsList], label[for=patientId], label[name=genderOpt], label[name=medicalHistory], label[name=medicationOpt]):after {
             content: "*";
             color: red;
         }
@@ -44,16 +44,15 @@
 
 
             <form class="needs-validation" action="#" method="" name="form" novalidate>
-                <div class="row">
+                 <div class="row">
                     <div class="col-sm-12 mt-2">
                         <label name="patientId" for="patientId" class="form-label-plaintext">Patient's ID
                             Number</label>
-                        <input type="text" class="form-control bg-secondary text-white" id="patientId" placeholder=""
-                            value="ID-123456789" name="patientId" disabled>
+                        <input type="text" class="form-control bg-secondary text-white" id="patientId" placeholder="" name="patientId" disabled>
                     </div>
                 </div>
 
-                <div class="py-2 text-center mt-2">
+               <div class="py-2 text-center mt-2">
                     <div class="row">
                         <h4>Patient's Information</h4>
                     </div>
@@ -191,8 +190,6 @@
                         </div>
                     </div>
 
-
-
                     <div class="col-lg-3 mt-2">
                         <label for="birthplace" class="form-label">Place of Birth(City)</label>
                         <input type="text" class="form-control" id="birthplace" placeholder="" required>
@@ -225,7 +222,7 @@
 
                 <hr class="border border-secondary my-3">
                 <div class="row">
-                    <div class="col-xl-3 mt-2">
+                    <div class="col-xl-4 mt-2">
                         <div class="row">
                             <label for="mHistory" class="form-label">Medical History (if applicable)</label>
                         </div>
@@ -276,43 +273,76 @@
                                 Epilepsy
                             </label>
                         </div>
-                        <!-- <div class="form-check">
-                            <input type="checkbox" class="form-check-input" name="mHistory" id="noMedHistory"
-                                value="No Symptoms">
-                            <label class="form-check-label" for="noMedHistory" name="medicalHistory">
-                                No Medical History
-                            </label>
-                        </div> -->
                     </div>
 
-                    <div class="col-xl-5 mt-2">
-                        <label for="symptoms" class="form-label">Symptom/s Currently Experiencing</label><br>
-                        <label for="symptoms" class="form-label">(Please Select "No Symptoms" if not experiencing any
-                            symptom)</label>
-                        <select multiple class="form-select" name="symptoms" id="symptoms" required>
-                            <option value="No Symptoms">No Symptoms</option>
-                            <option value="Chest Pain">Chest Pain</option>
-                            <option value="respiratory">Respiratory</option>
-                            <option value="Hematological">Hematological</option>
-                            <option value="Lymphatic">Lymphatic</option>
-                            <option value="Neurological">Neurological</option>
-                            <option value="Psychiatric">Psychiatric</option>
-                            <option value="Gastrointestinal">Gastrointestinal</option>
-                            <option value="Weight Loss">Weight Loss</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select valid option/s.
+                    <div class="col-xl-4 mt-2">
+                        <label for="symptoms" class="form-label">Symptom/s Currently Experiencing</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="chestPain"
+                                value="Chest Pain">
+                            <label class="form-check-label" for="chestPain" name="symptomsList">
+                                Chest Pain
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="respiratory"
+                                value="Respiratory">
+                            <label class="form-check-label" for="respiratory" name="symptomsList">
+                                Respiratory
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="hematological"
+                                value="Hematological">
+                            <label class="form-check-label" for="hematological" name="symptomsList">
+                                Hematological
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="lymphatic"
+                                value="Lymphatic">
+                            <label class="form-check-label" for="lymphatic" name="symptomsList">
+                                Lymphatic
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="neurological"
+                                value="Neurological">
+                            <label class="form-check-label" for="neurological" name="symptomsList">
+                                Neurological
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="psychiatric"
+                                value="Psychiatric">
+                            <label class="form-check-label" for="psychiatric" name="symptomsList">
+                                Psychiatric
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="gastrointestinal"
+                                value="Gastrointestinal">
+                            <label class="form-check-label" for="gastrointestinal" name="symptomsList">
+                                Gastrointestinal
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="symptoms" id="weightLoss"
+                                value="Weight Loss">
+                            <label class="form-check-label" for="weightLoss" name="symptomsList">
+                                Weight Loss
+                            </label>
                         </div>
                     </div>
 
                     <div class="col-xl-4 mt-2">
-                        <label for="gender" class="form-label">Are you currently taking any Medications?</label>
+                        <label for="medicationOpt" class="form-label">Are you currently taking any Medications?</label>
                         <div class="form-check form-check-inline d-flex flex-column">
-                            <label class="form-check-label" name="genderOpt" for="medicationYes">
+                            <label class="form-check-label" name="medicationOpt" for="medicationYes">
                                 <input class="form-check-input" type="radio" name="medication" id="medicationYes"
                                     value="Yes" required onclick="EnableDisableTextBox(this)">Yes
                             </label>
-                            <label class="form-check-label" name="genderOpt" for="medicationNo">
+                            <label class="form-check-label" name="medicationOpt" for="medicationNo">
                                 <input class="form-check-input" type="radio" name="medication" id="medicationNo"
                                     value="No" required onclick="EnableDisableTextBox(this)">No
                                 <div class="invalid-feedback">
@@ -378,7 +408,7 @@
                             return true;
                             // }
                         }
-                    }, true)
+                    }, false)
                 });
         })();
 
@@ -395,8 +425,20 @@
         document.querySelector('form').addEventListener('reset', function (event) {
             if (!confirm('Are you sure you want to reset the field?')) {
                 event.preventDefault();
+            } else {
+                window.location.reload();
             }
         });
+
+        function patientIdGen() {
+            var timeSpan = Date.now();
+            document.getElementById("patientId").value = `ID-HOSP${timeSpan}`;
+        }
+
+        window.onload = function () {
+            patientIdGen()
+            window.scrollTo(0, 0);
+        }
     </script>
 
 </body>
