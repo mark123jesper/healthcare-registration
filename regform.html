@@ -224,7 +224,7 @@
 
                 <hr class="border border-secondary my-3">
                 <div class="row">
-                    <div class="col-lg-4 mt-2">
+                    <div class="col-lg-2 mt-2">
                         <div class="row">
                             <label for="mHistory" class="form-label">Medical History</label>
                         </div>
@@ -277,7 +277,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 mt-2">
+                    <div class="col-lg-5 mt-2">
                         <label for="symptoms" class="form-label">Symptom/s Currently Experiencing</label>
                         <select multiple class="form-select" name="symptoms" id="symptoms" required>
                             <option value="No Symptoms">No Symptoms</option>
@@ -295,7 +295,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 mt-2">
+                    <div class="col-lg-5 mt-2">
                         <label for="gender" class="form-label">Are you currently taking any Medications?</label>
                         <div class="form-check form-check-inline d-flex flex-column">
                             <label class="form-check-label" name="genderOpt" for="medicationYes">
@@ -355,6 +355,14 @@
                 });
         })();
 
+        function EnableDisableTextBox(btnMedication) {
+            var medicationList = document.getElementById("medicationList");
+            if (btnMedication.value == "Yes") {
+                medicationList.removeAttribute("disabled");
+            } else {
+                medicationList.setAttribute("disabled", "disabled");
+            }
+        }
     </script>
 
 </body>
